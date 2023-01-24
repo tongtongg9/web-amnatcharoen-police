@@ -12,61 +12,252 @@
         />
         <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
         <link href="/styles.css" rel="stylesheet" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"
+        ></script>
+        <script src="/main.js"></script>
+        <script src="/tailwind.js"></script>
     </head>
     <body>
-        <nav class="w-full">
-            <div class="grid">
-                <div class="mx-auto flex max-w-7xl w-full items-center justify-between py-4">
-                    <a href="/" class="">
-                        <!-- <img src="http://www.amnatcharoenpolice.com/wp-content/uploads/2021/09/logossmall.png" /> -->
-                        <img src="images/logo.png" />
-                    </a>
-                </div>
+        <header class="w-full">
+            <div class="mx-auto flex max-w-7xl w-full items-center justify-between py-4">
+                <a href="/" class="">
+                    <!-- <img src="http://www.amnatcharoenpolice.com/wp-content/uploads/2021/09/logossmall.png" class="border" /> -->
+                    <img src="images/logo.png" alt="สถานีตำรวจภูธรเมืองอำนาจเจริญ" />
+                </a>
+            </div>
 
-                <div class="mx-auto w-full bg-white border-y">
-                    <div class="mx-auto flex max-w-7xl w-full items-center justify-between py-4 ring-0 ring-red-500">
-                        <ul class="flex items-center gap-2 text-sm font-medium text-gray-500">
-                            <li>
-                                <a
-                                    class="rounded-lg px-3 py-2 border hover:border-transparent hover:bg-red-700 hover:text-white transition"
-                                    href="/"
-                                >
-                                    หน้าหลัก
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    class="rounded-lg px-3 py-2 border hover:border-transparent hover:bg-red-700 hover:text-white transition"
-                                    href="#"
-                                >
-                                    ผู้บังคับบัญชา
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    class="rounded-lg px-3 py-2 border hover:border-transparent hover:bg-red-700 hover:text-white transition"
-                                    href="#"
-                                >
-                                    หน่วยในสังกัด
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    class="rounded-lg px-3 py-2 border hover:border-transparent hover:bg-red-700 hover:text-white transition"
-                                    href="/contact"
-                                >
-                                    ติดต่อเรา
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="mx-auto w-full h-16 bg-primary border-y">
+                <div
+                    class="mx-auto flex max-w-7xl w-full h-full items-center justify-between py-4 px-6 md:px-4 lg:px-0 ring-0 ring-red-500"
+                >
+                    <ul class="flex items-center sm:gap-2 text-sm font-medium text-white">
+                        <li>
+                            <a
+                                id="nav-home"
+                                class="rounded-lg px-3 py-2 border hover:border-white border-transparent hover:bg-primary hover:scale-105 transition"
+                                href="/"
+                            >
+                                หน้าหลัก
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                id="nav-vision"
+                                href="/วิสัยทัศน์"
+                                class="rounded-lg px-3 py-2 border hover:border-white border-transparent hover:bg-primary hover:scale-105 transition"
+                            >
+                                วิสัยทัศน์ ผบ.ตร.
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                id="nav-commander"
+                                class="rounded-lg px-3 py-2 border hover:border-white border-transparent hover:bg-primary hover:scale-105 transition"
+                                href="#"
+                            >
+                                ผู้บังคับบัญชา
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                id="nav-unit"
+                                class="rounded-lg px-3 py-2 border hover:border-white border-transparent hover:bg-primary hover:scale-105 transition"
+                                href="#"
+                            >
+                                หน่วยในสังกัด
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                id="nav-contact"
+                                class="rounded-lg px-3 py-2 border hover:border-white border-transparent hover:bg-primary hover:scale-105 transition"
+                                href="/ติดต่อเรา"
+                            >
+                                ติดต่อเรา
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </nav>
+        </header>
 
-        <main class="max-w-7xl mx-auto py-4 h-screen">
-            <div class="grid gap-6 h-full ring-1 ring-red-500 bg-blue-100">
-                <h1 class="text-2xl">สถานีตำรวจภูธรเมืองอำนาจเจริญ</h1>
+        <main class="max-w-7xl mx-auto py-4 min-h-screen text-gray-900">
+            <div class="px-6 md:px-4 lg:px-0 h-full ring-0 ring-red-500">
+                <div class="grid grid-cols-12 gap-6">
+                    <div class="ring-0 ring-green-800 col-span-4 flex flex-col gap-6">
+                        <div class="flex flex-col items-center gap-4 p-4 border rounded-xl">
+                            <p class="text-3xl font-semibold text-center">ผู้บังคับบัญชา</p>
+
+                            <!-- <img src="images/ผบตร.jpg" alt="ผบตร" class="w-full h-80 object-cover object-center" /> -->
+                            <div class="w-60 h-72 rounded-xl bg-gray-200 flex flex-col items-center justify-center">
+                                รูปผู้กำกับ
+                            </div>
+
+                            <p class="text-center">
+                                พ.ต.อ.วรการ ป้องกัน
+                                <br />
+                                ผู้กำกับการสถานีตำรวจภูธรเมืองอำนาจเจริญ
+                            </p>
+                        </div>
+
+                        <a
+                            class="inline-flex items-center w-full px-4 py-3.5 text-white font-medium cursor-poiter leading-tight uppercase rounded-xl shadow-none hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out"
+                            style="background-color: #1877f2"
+                            href="https://www.facebook.com/profile.php?id=100025052623152"
+                            target="_blank"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-4 h-4">
+                                <path
+                                    fill="currentColor"
+                                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                                />
+                            </svg>
+                            <span class="ml-2">สถานีตำรวจภูธรเมืองอำนาจเจริญ</span>
+                        </a>
+
+                        <a
+                            class="inline-flex items-center border border-primary w-full px-4 py-3.5 text-primary font-medium cursor-poiter leading-tight uppercase rounded-xl shadow-none hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out"
+                            href="http://www.royalthaipolice.go.th/index.php"
+                            target="_blank"
+                        >
+                            <img src="/images/logo-royal-thai-police.png" alt="สำนักงานตำรวจแห่งชาติ" class="w-6 h-6" />
+                            <span class="ml-2">สำนักงานตำรวจแห่งชาติ</span>
+                        </a>
+
+                        <a
+                            class="w-fit cursor-poiter border rounded-[2.15rem] shadow-none hover:shadow-lg transition duration-150 ease-in-out"
+                            href="https://play.google.com/store/apps/details?id=com.arunsawad.policeilu&hl=th&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                            target="_blank"
+                        >
+                            <img alt="Police i lert u" src="/images/icon-police-i-lert-u.webp" class="w-48" />
+                        </a>
+
+                        <iframe
+                            src="https://www.youtube.com/embed/3n0rVcbvzNo"
+                            title="สถานีตำรวจภูธรเมืองอำนาจเจริญr"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-72 rounded-xl shadow-lg"
+                        ></iframe>
+                    </div>
+
+                    <div
+                        class="ring-0 ring-green-800 col-span-8 space-y-12 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0"
+                    >
+                        <!-- images -->
+                        <div
+                            class="group relative border rounded-xl bg-white p-4 shadow-none hover:shadow-xl transition-shadow ease-in-out duration-300"
+                        >
+                            <div class="relative h-48 w-full overflow-hidden rounded-xl aspect-w-2 aspect-h-1">
+                                <img
+                                    src="/images/image-01.jpg"
+                                    alt="image-01"
+                                    class="h-full w-full object-cover object-center group-hover:scale-105 transition ease-in-out duration-500"
+                                />
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-500">
+                                <a href="#">
+                                    <span class="absolute inset-0"></span>
+                                    lorem ipsum
+                                </a>
+                            </h3>
+                            <p class="text-base font-semibold text-gray-900">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias voluptates adipisci
+                                animi debitis sapiente tempore fugiat.
+                            </p>
+                        </div>
+
+                        <div
+                            class="group relative border rounded-xl bg-white p-4 shadow-none hover:shadow-xl transition-shadow ease-in-out duration-300"
+                        >
+                            <div class="relative h-48 w-full overflow-hidden rounded-xl aspect-w-2 aspect-h-1">
+                                <img
+                                    src="/images/image-02.jpg"
+                                    alt="image-02"
+                                    class="h-full w-full object-cover object-center group-hover:scale-105 transition ease-in-out duration-500"
+                                />
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-500">
+                                <a href="#">
+                                    <span class="absolute inset-0"></span>
+                                    lorem ipsum
+                                </a>
+                            </h3>
+                            <p class="text-base font-semibold text-gray-900">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias voluptates adipisci
+                                animi debitis sapiente tempore fugiat.
+                            </p>
+                        </div>
+
+                        <div
+                            class="group relative border rounded-xl bg-white p-4 shadow-none hover:shadow-xl transition-shadow ease-in-out duration-300"
+                        >
+                            <div class="relative h-48 w-full overflow-hidden rounded-xl aspect-w-2 aspect-h-1">
+                                <img
+                                    src="/images/image-03.jpg"
+                                    alt="image-03"
+                                    class="h-full w-full object-cover object-center group-hover:scale-105 transition ease-in-out duration-500"
+                                />
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-500">
+                                <a href="#">
+                                    <span class="absolute inset-0"></span>
+                                    lorem ipsum
+                                </a>
+                            </h3>
+                            <p class="text-base font-semibold text-gray-900">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias voluptates adipisci
+                                animi debitis sapiente tempore fugiat.
+                            </p>
+                        </div>
+                        <div
+                            class="group relative border rounded-xl bg-white p-4 shadow-none hover:shadow-xl transition-shadow ease-in-out duration-300"
+                        >
+                            <div class="relative h-48 w-full overflow-hidden rounded-xl aspect-w-2 aspect-h-1">
+                                <img
+                                    src="/images/image-04.jpg"
+                                    alt="image-04"
+                                    class="h-full w-full object-cover object-top group-hover:scale-105 transition ease-in-out duration-500"
+                                />
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-500">
+                                <a href="#">
+                                    <span class="absolute inset-0"></span>
+                                    lorem ipsum
+                                </a>
+                            </h3>
+                            <p class="text-base font-semibold text-gray-900">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias voluptates adipisci
+                                animi debitis sapiente tempore fugiat.
+                            </p>
+                        </div>
+                        <div
+                            class="group relative border rounded-xl bg-white p-4 shadow-none hover:shadow-xl transition-shadow ease-in-out duration-300"
+                        >
+                            <div class="relative h-48 w-full overflow-hidden rounded-xl aspect-w-2 aspect-h-1">
+                                <img
+                                    src="/images/image-05.jpg"
+                                    alt="image-05"
+                                    class="h-full w-full object-cover object-center group-hover:scale-105 transition ease-in-out duration-500"
+                                />
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-500">
+                                <a href="#">
+                                    <span class="absolute inset-0"></span>
+                                    lorem ipsum
+                                </a>
+                            </h3>
+                            <p class="text-base font-semibold text-gray-900">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias voluptates adipisci
+                                animi debitis sapiente tempore fugiat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     </body>
